@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faEyeSlash, faTrash, faUserEdit } from '@fortawesome/free-solid-svg-icons';
+import { faArrowAltCircleLeft, faArrowAltCircleRight, faEye, faEyeSlash, faTrash, faUserEdit } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import './UserTable.css';
 import Pagination from '../../Pagination/Pagination';
@@ -10,7 +10,7 @@ const UsersTable = () => {
     const [users, setUsers] = useState([]);
     const [passVisible, setPassVisible] = useState(false);
     const [clickedPass, setClickedPass] = useState(null);
-    const [currentPage, setCurrentPage] = useState(1);
+    let [currentPage, setCurrentPage] = useState(1);
     const [usersPerPage, setUsersPerPage] = useState(4);
 
     useEffect(() => {
@@ -45,7 +45,31 @@ const UsersTable = () => {
         }
     }
 
-const paginate = (pageNumber) => setCurrentPage(pageNumber)
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+    
+
+    const handleNext = () => {
+        currentPage++;
+        if(currentPage >(Math.ceil(users.length / usersPerPage))){
+            currentPage =1;
+            setCurrentPage(currentPage);
+        }else{
+            setCurrentPage(currentPage)
+        }
+
+    }
+
+    const handlePrevious = () => {
+        currentPage--;
+        if(currentPage < 1){
+            currentPage = (Math.ceil(users.length / usersPerPage));
+            setCurrentPage(currentPage);
+        }else{
+            setCurrentPage(currentPage)
+        }
+
+    }
 
     return (
         <div>
@@ -108,12 +132,31 @@ const paginate = (pageNumber) => setCurrentPage(pageNumber)
                 </table>
 
             </div>
-            <Pagination
-                usersPerPage={usersPerPage}
-                totalUsers={users.length}
-                paginate={paginate}
-            >
-            </Pagination>
+            <div className="d-flex justify-content-between">
+                <div className="d-flex">
+                    <FontAwesomeIcon
+                        style={{ cursor: "pointer", paddingRight: "10px", fontSize: "35px" }}
+                        icon={faArrowAltCircleLeft}
+                        onClick={() => handlePrevious()}
+
+                    />
+                    <Pagination
+                        usersPerPage={usersPerPage}
+                        totalUsers={users.length}
+                        paginate={paginate}
+                    >
+                    </Pagination>
+
+                    <FontAwesomeIcon
+                        style={{ cursor: "pointer", paddingLeft: "10px", fontSize: "35px" }}
+                        icon={faArrowAltCircleRight}
+                        onClick={() => handleNext()}
+                    />
+                </div>
+                <div>
+                    <h6>Showing 4 out of {users.length}</h6>
+                </div>
+            </div>
         </div>
     );
 };

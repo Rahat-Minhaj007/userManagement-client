@@ -3,7 +3,7 @@
 
 
 ## About Suffix IT Management
-It's a MERN based project.Trg to implement the CRUD operation with the pagination.
+It's a MERN based project.Trying to implement the CRUD operation with the pagination.
 
 ### Key Features :
 1. User can Create New User.After create new user that data added in database and show on UI Table in real time.

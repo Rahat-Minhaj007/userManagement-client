@@ -2,10 +2,11 @@ import React from 'react';
 import Nav from '../../shared/Nav/Nav';
 import AddUser from '../AddUser/AddUser';
 import UsersTable from '../UsersTable/UsersTable';
+import './Home.css';
 
 const Home = () => {
     return (
-        <div>
+        <div className="home">
             <>
                 <Nav />
             </>

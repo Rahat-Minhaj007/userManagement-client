@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+.spinner{
+  margin-left: 48%;
+  margin-top: 22%
+}
+@media only screen and (max-width: 768px) {
+  .spinner{
+    margin-left: 40%;
+    margin-top: 80%
+  }
+}

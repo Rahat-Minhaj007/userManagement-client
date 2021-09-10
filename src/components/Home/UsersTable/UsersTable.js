@@ -15,7 +15,7 @@ const UsersTable = () => {
 
     useEffect(() => {
         const fetchPost = async () => {
-            const res = await axios.get(`http://localhost:5055/users`)
+            const res = await axios.get(`https://nameless-mountain-90298.herokuapp.com/users`)
             setUsers(res.data);
 
         }
@@ -35,7 +35,7 @@ const UsersTable = () => {
         if (window.confirm('Do you want to delete this item?')) {
 
 
-            fetch(`http://localhost:5055/delete/${id}`, {
+            fetch(`https://nameless-mountain-90298.herokuapp.com/delete/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -47,14 +47,14 @@ const UsersTable = () => {
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-    
+
 
     const handleNext = () => {
         currentPage++;
-        if(currentPage >(Math.ceil(users.length / usersPerPage))){
-            currentPage =1;
+        if (currentPage > (Math.ceil(users.length / usersPerPage))) {
+            currentPage = 1;
             setCurrentPage(currentPage);
-        }else{
+        } else {
             setCurrentPage(currentPage)
         }
 
@@ -62,10 +62,10 @@ const UsersTable = () => {
 
     const handlePrevious = () => {
         currentPage--;
-        if(currentPage < 1){
+        if (currentPage < 1) {
             currentPage = (Math.ceil(users.length / usersPerPage));
             setCurrentPage(currentPage);
-        }else{
+        } else {
             setCurrentPage(currentPage)
         }
 
@@ -89,7 +89,7 @@ const UsersTable = () => {
                     </thead>
                     <tbody>
                         {
-                            currentUser.map((data, index) =>
+                            currentUser?.map((data, index) =>
 
                                 <tr>
                                     <td>{index + 1}</td>

@@ -21,7 +21,7 @@ const AddUser = () => {
 
         };
 
-        const url = `http://localhost:5055/addUser`;
+        const url = `https://nameless-mountain-90298.herokuapp.com/addUser`;
 
         fetch(url, {
             method: "POST",
@@ -92,7 +92,7 @@ const AddUser = () => {
 
                     <input
                         name="password"
-                        type="password"
+                        type="text"
                         placeholder="Password"
                         ref={register({ required: true,maxLength: 6 })}
                         

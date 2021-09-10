@@ -1,7 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye } from '@fortawesome/free-solid-svg-icons';
+import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+
+
 
 const NoMatch = () => {
 
@@ -12,7 +14,12 @@ const NoMatch = () => {
                 <img src="https://i.ibb.co/5n478qb/moja.gif" alt="dinka chika" />
                 <h3>coming soon</h3>
                 <h4> Thanks For Your Patience</h4>
-                <Link to="/home">Back</Link>
+                <Link to="/home" className="text-dark">
+                    <FontAwesomeIcon
+                        style={{ cursor: "pointer", fontSize: "25px" }}
+                        icon={faArrowAltCircleLeft}
+                    />
+                    </Link>
             </div>
 
         </div>

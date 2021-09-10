@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Nav.css';
 
 const Nav = () => {
     return (
@@ -14,17 +15,20 @@ const Nav = () => {
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
 
                         <li className="nav-item">
-                            <Link className="nav-link me-5 active text-dark  fs-6" aria-current="page" to="/home">Home</Link>
+                            <Link className="nav-link me-5 active text-dark  fs-6 a" aria-current="page" to="/home">Home</Link>
                         </li>
 
                         <li className="nav-item">
-                            <Link className="nav-link me-5 text-dark  fs-6" to="/about">About</Link>
+                            <Link className="nav-link me-5 text-dark  fs-6 a" to="/about">About</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link me-5 text-dark  fs-6" to="/about">Contact</Link>
+                            <Link className="nav-link me-5 text-dark  fs-6 a" to="/contact">Contact</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link me-5 text-dark  fs-6" to="/about">User</Link>
+                            <Link className="nav-link me-5 text-dark  fs-6 a" to="/user">User</Link>
+                        </li>
+                        <li className="nav-item ps-0 ps-md-5">
+                            <Link className="nav-link me-5 text-dark  fs-6 a" to="/logout">Log Out</Link>
                         </li>
 
 

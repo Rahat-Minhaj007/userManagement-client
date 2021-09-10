@@ -6,6 +6,7 @@ import { faUsers } from '@fortawesome/free-solid-svg-icons';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 const EditUser = () => {
 
@@ -17,7 +18,7 @@ const EditUser = () => {
     useEffect(() => {
         const fetchPost = async () => {
 
-            const res = await axios.get(`http://localhost:5055/users`)
+            const res = await axios.get(`https://nameless-mountain-90298.herokuapp.com/users`)
             setUser(res.data.find((pd) => (pd._id) === (_id)));
 
         }
@@ -39,20 +40,20 @@ const EditUser = () => {
         };
         console.log(userUpdateData);
 
-        fetch(`http://localhost:5055/update/${_id}`, {
+        fetch(`https://nameless-mountain-90298.herokuapp.com/update/${_id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(userUpdateData),
         })
-            .then((res) => alert("Successfully Updated"))
+        .then((res) => swal("Congratulations!", "Updated Successfully!", "success"));
 
             e.target.reset();
     };
 
     return (
-        <div className="addUser">
+        <div className="editUser">
             <Nav />
             <div className="container d-flex justify-content-center">
 
@@ -114,7 +115,7 @@ const EditUser = () => {
 
                         <input
                             name="password"
-                            type="password"
+                            type="text"
                             placeholder="Password"
                             ref={register({ required: true, maxLength: 6 })}
                             defaultValue={user?.password}

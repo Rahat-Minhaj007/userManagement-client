@@ -1,9 +1,17 @@
 .user {
-    width:700px;
-    background: #fff;
-    padding: 25px;
-    border-radius: 5px;
-    box-shadow: 4px 4px 2px rgb(34, 34, 33);
+    width:100%;
+   
+    padding:3rem 2.5rem  ;
+   
+    border-radius: 1rem  ;
+    backdrop-filter: blur(1rem) ;
+    box-shadow:  1.3rem 1.3rem 1.3rem rgba(0,0,0,0.5) ;
+
+    border-top-color: rgba(225,225,225,0.1) ;
+    border-left-color: rgba(225,225,225,0.1) ;
+    border-bottom-color: rgba(225,225,225,0.1) ;
+    border-right-color: rgba(225,225,225,0.1) ;
+    background-color: rgba(225,225,225,0.1) ;
 }
 
 .user .user-input-field {
@@ -49,7 +57,7 @@
     
 }
 .userBtn:hover{
-    background-color: rgb(73, 73, 73);
+    background-color: rgb(34, 34, 34);
     color: white;
 
 }

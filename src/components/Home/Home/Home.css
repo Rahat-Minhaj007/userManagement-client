@@ -4,5 +4,13 @@
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: auto;
+    height: 100vh;
 }
+
+   @media (max-width: 2224px){
+    .home{
+       
+        height: auto !important;
+    }
+
+   }

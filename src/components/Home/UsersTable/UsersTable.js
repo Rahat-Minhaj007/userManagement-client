@@ -5,6 +5,7 @@ import { faArrowAltCircleLeft, faArrowAltCircleRight, faEye, faEyeSlash, faTrash
 import { Link } from 'react-router-dom';
 import './UserTable.css';
 import Pagination from '../../Pagination/Pagination';
+import swal from 'sweetalert';
 
 const UsersTable = () => {
     const [users, setUsers] = useState([]);
@@ -31,7 +32,7 @@ const UsersTable = () => {
 
 
     const handleDelete = (id) => {
-        console.log(id);
+      
         if (window.confirm('Do you want to delete this item?')) {
 
 
@@ -40,7 +41,7 @@ const UsersTable = () => {
             })
                 .then(res => res.json())
                 .then(result => {
-                    console.log('Deleted Successfully');
+                    swal("Congratulations!", "Updated Successfully!", "success")
                 })
         }
     }

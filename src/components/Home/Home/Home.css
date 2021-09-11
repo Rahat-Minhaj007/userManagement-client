@@ -1,0 +1,41 @@
+.home-content{
+    background:linear-gradient(rgba(0,0,0,0.3), #435353),url("https://images.unsplash.com/photo-1497215842964-222b430dc094?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+  
+}
+
+.home-text{
+    text-align: center;
+    color: rgb(238, 238, 238);
+    padding-top: 300px;
+}
+
+.home-text h1{
+    font-size:90px;
+    font-family: 'Kaushan Script', cursive;
+}
+.home-text p{
+    font-size:26px;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .home-text{
+        text-align: center;
+        color: rgb(243, 243, 243);
+        padding-top: 110px;
+    }
+    
+    .home-text h1{
+        font-size:65px;
+        font-family: 'Kaushan Script', cursive;
+    }
+    .home-text p{
+        font-size:15px;
+        font-style: italic;
+    }
+}

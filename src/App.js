@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 import EditUser from "./components/EditUser/EditUser";
+import Home from "./components/Home/Home/Home";
 import User from "./components/Home/User/User";
 import NoMatch from "./components/NoMatch/NoMatch";
 
@@ -31,16 +32,19 @@ function App() {
       }
       {!spinner &&
         <Switch>
-
+          <Route path="/home">
+            <Home />
+          </Route>
           <Route path="/user">
             <User />
           </Route>
+
           <Route path="/edit/:_id">
             <EditUser />
           </Route>
 
           <Route exact path="/">
-            <NoMatch />
+            <Home />
           </Route>
           <Route path="*">
             <NoMatch />
